@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BasketController : MonoBehaviour
 {
+    public GameObject gameDirector;
     public AudioClip apleSE;
     public AudioClip bombSE;
     AudioSource audioSource;
@@ -22,7 +23,7 @@ public class BasketController : MonoBehaviour
         {        
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("Stage")))
             {
                 float x = Mathf.RoundToInt(hit.point.x);
                 float z = Mathf.RoundToInt(hit.point.z);
@@ -37,11 +38,14 @@ public class BasketController : MonoBehaviour
         if (other.gameObject.tag == "Apple")
         {
             this.audioSource.PlayOneShot(this.apleSE);
+            this.gameDirector.GetComponent<GameDirector>().GetApple();
+            Destroy(other.gameObject);
         } 
         else if (other.gameObject.tag == "Bomb")
         {
             this.audioSource.PlayOneShot(this.bombSE);
-        }
-        Destroy(other.gameObject);
+            this.gameDirector.GetComponent<GameDirector>().GetBomb();
+            Destroy(other.gameObject);
+    }
     }
 }
