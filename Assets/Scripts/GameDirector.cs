@@ -28,19 +28,19 @@ public class GameDirector : MonoBehaviour
             this.time = 0;
             this.itemGenerator.GetComponent<ItemGenerator>().SetParameter(10000f, 0, 0);
         }
-        else if (this.time >= 0 && this.time < 5)
+        else if (this.time >= 0 && this.time < 4)
         {
-            this.itemGenerator.GetComponent<ItemGenerator>().SetParameter(0.9f, -0.04f, 3);
+            this.itemGenerator.GetComponent<ItemGenerator>().SetParameter(0.9f, -0.06f, 0);
         }
-        else if (this.time >= 5 && this.time < 10)
+        else if (this.time >= 4 && this.time < 12)
         {
-            this.itemGenerator.GetComponent<ItemGenerator>().SetParameter(0.4f, -0.06f, 6);
+            this.itemGenerator.GetComponent<ItemGenerator>().SetParameter(0.4f, -0.05f, 6);
         }
-        else if (this.time >= 10 && this.time < 20)
+        else if (this.time >= 12 && this.time < 23)
         {
             this.itemGenerator.GetComponent<ItemGenerator>().SetParameter(0.7f, -0.04f, 4);
         }
-        else if (this.time >= 20 && this.time < 30)
+        else if (this.time >= 23 && this.time < 30)
         {
             this.itemGenerator.GetComponent<ItemGenerator>().SetParameter(1.0f, -0.03f, 2);
         }
