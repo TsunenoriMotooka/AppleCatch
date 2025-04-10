@@ -37,10 +37,10 @@ public class ItemGenerator : MonoBehaviour
         }        
     }
 
-    public void SetParameter(float span, int ratio, float speed)
+    public void SetParameter(float span, float speed, int ratio)
     {
         this.span = span;
-        this.ratio = ratio;
         this.speed = speed;
+        this.ratio = ratio;
     }
 }

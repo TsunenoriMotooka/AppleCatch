@@ -904,6 +904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 819798455}
   pointText: {fileID: 1052744787}
+  itemGenerator: {fileID: 26316323}
 --- !u!4 &1566636421
 Transform:
   m_ObjectHideFlags: 0
